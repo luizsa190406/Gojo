@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0c0c0c, #1f1f2e);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    color: #ccc;
+  }
+  
+  .main {
+    text-align: center;
+  }
+  
+  .imagem-principal {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #00f, 0 0 40px #0ff;
+  }
+  
+  /* Botões com efeito brilhante */
+  button {
+    background: linear-gradient(45deg, #0ff, #00f);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animação de brilho */
+  button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: shine 3s infinite linear;
+    z-index: 0;
+  }
+  
+  button span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: rotate(0deg) translateX(0);
+    }
+    100% {
+      transform: rotate(360deg) translateX(0);
+    }
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0ff, 0 0 40px #00f;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2em;
+    }
+    header p {
+      font-size: 1em;
+    }
+    .imagem-principal {
+      width: 90%;
+    }
+    button {
+      width: 90%;
+      font-size: 1em;
+    }
+  }
+ 
+  .fade-in {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  
+  .fade-in.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .zoom-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  
+  .zoom-in.mostrar-zoom {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
